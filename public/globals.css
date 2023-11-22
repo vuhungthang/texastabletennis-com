@@ -1,0 +1,46 @@
+input[type="button"] {
+    text-align: center;
+    width: 63px;
+    height: 30px;
+    border: 1px solid #E0F4FF;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#equal-sign {
+    background-color: #39A7FF;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+body,html {
+    margin: 0;
+    height: 100%;
+}
+.result {
+    font-weight: bold;
+    text-align: right;
+    font-size: 1.2em;
+    border-radius: 4px;
+    border: 3px outset; 
+}
+
+input[type="button"]:hover { 
+    background-color: #F8CBA6; 
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign {
+background-color: #A1CCD1;
+}
+
+html {
+    background-color: white;
+}
