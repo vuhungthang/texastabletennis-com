@@ -50,5 +50,4 @@ export const appStyle = css`
             color: white;
             background-color: #4285F4;
           }
-`
-;
+`;
