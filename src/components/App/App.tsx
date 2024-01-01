@@ -38,5 +38,5 @@ export default function App() {
           <div className='flexbox-items sign'>+</div>
       </div>     
     </div>
-  )
+  );
 }
