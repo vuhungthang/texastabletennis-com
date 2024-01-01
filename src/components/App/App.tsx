@@ -1,17 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {appStyle} from './AppStyles';
 
 export default function App() {
+  const [display, setDisplay] = useState('1 + 1');
+
+  const onClear = () => {
+    setDisplay('');
+  };
+
   return (
     <div className={appStyle}>
       <div className="result">
-        <input type="text" value={1} />
+        <div className="display">
+          {display}
+        </div>
       </div>
       <div className="flexbox-container">
         <div className="flexbox-items sign">(</div>
         <div className="flexbox-items sign">)</div>
         <div className="flexbox-items sign">%</div>
-        <div className="flexbox-items sign">AC</div>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={onClear}
+        >
+          AC
+        </button>
       </div>
       <div className="flexbox-container">
         <div className="flexbox-items">7</div>
