@@ -1,0 +1,6 @@
+app/assets
+.*
+!.ts
+!.js
+!.tsx
+!.jsx

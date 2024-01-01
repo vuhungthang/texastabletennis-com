@@ -12,5 +12,5 @@ export default function App() {
         Test 2
       </div>
     </div>
-  )
+  );
 }
