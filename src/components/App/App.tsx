@@ -2,12 +2,20 @@ import React, {useState} from 'react';
 import {appStyle} from './AppStyles';
 
 export default function App() {
-  const [display, setDisplay] = useState('1 + 1');
+  const [display, setDisplay] = useState('');
 
   const onClear = () => {
     setDisplay('');
   };
-
+  const onSign = (sign: string) => {
+    setDisplay(() => display + sign);
+  };
+  const onNum = (num: number) => {
+    setDisplay(() => display + String(num));
+  };
+  const displayResult = () => {
+    setDisplay(eval(display));
+  };
   return (
     <div className={appStyle}>
       <div className="result">
@@ -16,9 +24,27 @@ export default function App() {
         </div>
       </div>
       <div className="flexbox-container">
-        <div className="flexbox-items sign">(</div>
-        <div className="flexbox-items sign">)</div>
-        <div className="flexbox-items sign">%</div>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign('(')}
+        >
+          (
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign(')')}
+        >
+          )
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign('%')}
+        >
+          %
+        </button>
         <button
           type="button"
           className="flexbox-items sign"
@@ -28,28 +54,125 @@ export default function App() {
         </button>
       </div>
       <div className="flexbox-container">
-        <div className="flexbox-items">7</div>
-        <div className="flexbox-items">8</div>
-        <div className="flexbox-items">9</div>
-        <div className="flexbox-items sign">/</div>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(7)}
+        >
+          7
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(8)}
+        >
+          8
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(9)}
+        >
+          9
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign('/')}
+        >
+          /
+        </button>
       </div>
       <div className="flexbox-container">
-        <div className="flexbox-items">4</div>
-        <div className="flexbox-items">5</div>
-        <div className="flexbox-items">6</div>
-        <div className="flexbox-items sign">X</div>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(4)}
+        >
+          4
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(5)}
+        >
+          5
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(6)}
+        >
+          6
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign('*')}
+        >
+          *
+        </button>
       </div>
       <div className="flexbox-container">
-        <div className="flexbox-items">1</div>
-        <div className="flexbox-items">2</div>
-        <div className="flexbox-items">3</div>
-        <div className="flexbox-items">-</div>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(1)}
+        >
+          1
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(2)}
+        >
+          2
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(3)}
+        >
+          3
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onSign('-')}
+        >
+          -
+        </button>
       </div>
       <div className="flexbox-container">
-        <div className="flexbox-items">0</div>
-        <div className="flexbox-items">.</div>
-        <div className="flexbox-items sign" id="equal-sign">=</div>
-        <div className="flexbox-items sign">+</div>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onNum(0)}
+        >
+          0
+        </button>
+        <button
+          type="button"
+          className="flexbox-items"
+          onClick={() => onSign('.')}
+        >
+          .
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          id="equal-sign"
+          onClick={() => displayResult()}
+        >
+          =
+        </button>
+        <button
+          type="button"
+          className="flexbox-items sign"
+          onClick={() => onSign('+')}
+        >
+          +
+        </button>
       </div>
     </div>
   );
