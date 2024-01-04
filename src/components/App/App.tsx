@@ -32,27 +32,16 @@ export default function App() {
         </div>
       </div>
       <div className="flexbox-container">
-        <button
-          type="button"
-          className="flexbox-items sign"
-          onClick={() => onSign('(')}
-        >
-          (
-        </button>
-        <button
-          type="button"
-          className="flexbox-items sign"
-          onClick={() => onSign(')')}
-        >
-          )
-        </button>
-        <button
-          type="button"
-          className="flexbox-items sign"
-          onClick={() => onSign('%')}
-        >
-          %
-        </button>
+        {['(', ')', '%'].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="flexbox-items sign"
+            onClick={() => onSign(value)}
+          >
+            {value}
+          </button>
+        ))}
         <button
           type="button"
           className="flexbox-items sign"
@@ -62,27 +51,16 @@ export default function App() {
         </button>
       </div>
       <div className="flexbox-container">
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(7)}
-        >
-          7
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(8)}
-        >
-          8
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(9)}
-        >
-          9
-        </button>
+        {['7', '8', '9'].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="flexbox-items"
+            onClick={() => onNum(Number(value))}
+          >
+            {value}
+          </button>
+        ))}
         <button
           type="button"
           className="flexbox-items sign"
@@ -92,27 +70,16 @@ export default function App() {
         </button>
       </div>
       <div className="flexbox-container">
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(4)}
-        >
-          4
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(5)}
-        >
-          5
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(6)}
-        >
-          6
-        </button>
+        {['4', '5', '6'].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="flexbox-items"
+            onClick={() => onNum(Number(value))}
+          >
+            {value}
+          </button>
+        ))}
         <button
           type="button"
           className="flexbox-items sign"
@@ -122,30 +89,19 @@ export default function App() {
         </button>
       </div>
       <div className="flexbox-container">
+        {['1', '2', '3'].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="flexbox-items"
+            onClick={() => onNum(Number(value))}
+          >
+            {value}
+          </button>
+        ))}
         <button
           type="button"
-          className="flexbox-items"
-          onClick={() => onNum(1)}
-        >
-          1
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(2)}
-        >
-          2
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onNum(3)}
-        >
-          3
-        </button>
-        <button
-          type="button"
-          className="flexbox-items"
+          className="flexbox-items sign"
           onClick={() => onSign('-')}
         >
           -
