@@ -115,28 +115,23 @@ export default function App() {
         >
           0
         </button>
-        <button
-          type="button"
-          className="flexbox-items"
-          onClick={() => onSign('.')}
-        >
-          .
-        </button>
-        <button
-          type="button"
-          className="flexbox-items sign"
-          id="equal-sign"
-          onClick={() => displayResult()}
-        >
-          =
-        </button>
-        <button
-          type="button"
-          className="flexbox-items sign"
-          onClick={() => onSign('+')}
-        >
-          +
-        </button>
+        {['.', '=', '+'].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="flexbox-items sign"
+            id={value === '=' ? 'equal-sign' : undefined}
+            onClick={() => {
+              if (value === '=') {
+                displayResult();
+              } else {
+                onSign(value);
+              }
+            }}
+          >
+            {value}
+          </button>
+        ))}
       </div>
     </div>
   );
