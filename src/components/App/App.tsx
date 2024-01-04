@@ -14,7 +14,11 @@ export default function App() {
     setDisplay(() => display + String(num));
   };
   const displayResult = () => {
-    setDisplay(eval(display));
+    try {
+      setDisplay(eval(display));
+    } catch (error) {
+      setDisplay('Syntax Error');
+    }
   };
   return (
     <div className={appStyle}>
