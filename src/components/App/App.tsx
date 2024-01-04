@@ -3,23 +3,27 @@ import {appStyle} from './AppStyles';
 
 export default function App() {
   const [display, setDisplay] = useState('');
-
   const onClear = () => {
     setDisplay('');
   };
+
   const onSign = (sign: string) => {
     setDisplay(() => display + sign);
   };
+
   const onNum = (num: number) => {
     setDisplay(() => display + String(num));
   };
+
   const displayResult = () => {
     try {
+      // eslint-disable-next-line no-eval
       setDisplay(eval(display));
     } catch (error) {
       setDisplay('Syntax Error');
     }
   };
+
   return (
     <div className={appStyle}>
       <div className="result">
